@@ -13,10 +13,12 @@ java {
 	}
 }
 
+// 라이브러리 원격 저장소 (필요 시, 특정 사이트 URL 기입하여 라이브러리 불러올 수 있음)
 repositories {
 	mavenCentral()
 }
 
+// 스프링 프로젝트에서 사용할 라이브러리 기입
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
