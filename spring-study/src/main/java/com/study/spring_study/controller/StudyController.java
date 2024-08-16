@@ -34,7 +34,7 @@ public class StudyController {
     @GetMapping("hello-string")
     @ResponseBody
     public String helloString(@RequestParam("name") String name){
-        return "hello " + name;
+        return name;
     }
 
     /*
