@@ -1,7 +1,7 @@
 package com.study.spring_study.domain;
 
 /*
- * 1. 회원정보 도메인
+ *   회원 도메인
  */
 public class Member {
 
@@ -11,7 +11,6 @@ public class Member {
     public Long getId(){
         return id;
     }
-
     public void setId(Long id){
         this.id = id;
     }
@@ -19,7 +18,6 @@ public class Member {
     public String getName(){
         return name;
     }
-
     public void setName(String name){
         this.name = name;
     }
