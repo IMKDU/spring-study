@@ -65,7 +65,7 @@ class MemberServiceTest {
 
         //When
         memberService.join(member1);
-        // 예외문 가져오기
+        // 예외 가져오기
         IllegalStateException e = assertThrows(IllegalStateException.class, 
                 () -> memberService.join(member2));
 
