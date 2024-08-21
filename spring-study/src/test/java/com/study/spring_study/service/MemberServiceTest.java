@@ -1,4 +1,4 @@
-package com.study.spring_study.Service;
+package com.study.spring_study.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -65,10 +65,20 @@ class MemberServiceTest {
 
         //When
         memberService.join(member1);
-        // 예외 가져오기
+        // 예외처리 (assertThrows 문)
         IllegalStateException e = assertThrows(IllegalStateException.class, 
                 () -> memberService.join(member2));
 
         assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
     }
+/*  
+ *      예외 처리 (try-catch 문)
+ *      try {
+ *          memberService.join(member2);
+ *      } catch(IllegalStateException e){
+ *          assertThat(e.getMessage()).isEquals("이미 존재하는 회원입니다.");
+ *      }
+ */
+        
+
 }

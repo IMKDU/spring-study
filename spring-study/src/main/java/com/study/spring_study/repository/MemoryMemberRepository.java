@@ -6,8 +6,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import org.springframework.stereotype.Repository;
+
 import com.study.spring_study.domain.Member;
 
+@Repository
 public class MemoryMemberRepository implements MemberRepository {
 
     

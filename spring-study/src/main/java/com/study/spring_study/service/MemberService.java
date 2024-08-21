@@ -1,11 +1,14 @@
-package com.study.spring_study.Service;
+package com.study.spring_study.service;
 
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
+
 import com.study.spring_study.domain.Member;
 import com.study.spring_study.repository.MemberRepository;
 
+@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
@@ -16,8 +19,10 @@ public class MemberService {
     }
 
     /*
+     * <서비스 형식>
      * Service 에서는 비즈니스 로직 상호작용이므로,
-     * 비즈니스 로직용어로 메소드, 주석을 관리한다.
+     * 비즈니스 로직에 근거한 변수, 메소드, 주석을
+     * 클라이언트 친화적 네이밍으로 관리한다.
      */
 
     /*
