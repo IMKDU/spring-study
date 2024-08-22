@@ -2,7 +2,10 @@ package com.study.spring_study.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import com.study.spring_study.domain.Member;
 import com.study.spring_study.service.MemberService;
 
 @Controller
@@ -17,5 +20,25 @@ public class MemberController {
     public MemberController(MemberService memberService){
         this.memberService = memberService;
     }
+
+    // 홈 매핑
+    @GetMapping("/members/new")
+    public String createForm(){
+        return "members/createMemForm";
+    }
+
+    // 포스트 매핑
+    @PostMapping("/members/new")
+    public String create(MemberForm form){
+
+        Member member = new Member();
+        member.setName(form.getName());
+
+        memberService.join(member);
+
+        return "redirect:/";
+    }
+    
+
 
 }

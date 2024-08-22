@@ -3,6 +3,7 @@ package com.study.spring_study.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.study.spring_study.domain.Member;
@@ -13,6 +14,7 @@ public class MemberService {
 
     private final MemberRepository memberRepository;
 
+    @Autowired
     // DI 주입 | 의존성 주입
     public MemberService(MemberRepository memberRepository){
         this.memberRepository = memberRepository;
