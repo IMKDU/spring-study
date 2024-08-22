@@ -24,7 +24,7 @@ public class MemberController {
     // 홈 매핑
     @GetMapping("/members/new")
     public String createForm(){
-        return "members/createMemForm";
+        return "members/createMemberForm";
     }
 
     // 포스트 매핑
