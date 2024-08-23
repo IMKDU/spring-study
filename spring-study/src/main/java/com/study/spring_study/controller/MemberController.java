@@ -1,9 +1,13 @@
 package com.study.spring_study.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.ui.*;
+
 
 import com.study.spring_study.domain.Member;
 import com.study.spring_study.service.MemberService;
@@ -21,13 +25,13 @@ public class MemberController {
         this.memberService = memberService;
     }
 
-    // 홈 매핑
+    // 1. 회원가입 뷰 조회
     @GetMapping("/members/new")
     public String createForm(){
         return "members/createMemberForm";
     }
 
-    // 포스트 매핑
+    // 2. 회원가입 등록
     @PostMapping("/members/new")
     public String create(MemberForm form){
 
@@ -39,6 +43,13 @@ public class MemberController {
         return "redirect:/";
     }
     
+    // 3. 회원목록 조회
+    @GetMapping("/members")
+    public String list(Model model){
+        List<Member> members = memberService.findMembers();
+        model.addAttribute("members", members);
+        return "members/memberList";
+    }
 
 
 }
