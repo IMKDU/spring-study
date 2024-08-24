@@ -16,12 +16,15 @@ java {
 // 라이브러리 원격 저장소 (필요 시, 특정 사이트 URL 기입하여 라이브러리 불러올 수 있음)
 repositories {
 	mavenCentral()
-}
+} 
 
 // 스프링 프로젝트에서 사용할 라이브러리 기입
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc' // h2 Database 연결을 위한 라이브러리
+	runtimeOnly 'com.h2database:h2' // h2 database 설정을 위한 의존성 추가
+	implementation("org.springframework.boot:spring-boot-devtools") // h2 console 을 보기 위해
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
