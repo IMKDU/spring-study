@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "JpashopApplication",
+            "request": "launch",
+            "mainClass": "jpabook.jpashop.JpashopApplication",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
