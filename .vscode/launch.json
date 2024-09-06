@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SpringStudyApplication",
+            "request": "launch",
+            "mainClass": "com.study.spring_study.SpringStudyApplication",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "JpashopApplication",
             "request": "launch",
             "mainClass": "jpabook.jpashop.JpashopApplication",
