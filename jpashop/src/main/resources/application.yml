@@ -22,3 +22,7 @@ spring:
                     ddl-auto: none
                     dialect: org.hibernate.dialect.H2Dialect
         database-platform: org.hibernate.dialect.H2Dialect
+
+logging:
+    level:
+        org.hibernate.SQL:  debug
