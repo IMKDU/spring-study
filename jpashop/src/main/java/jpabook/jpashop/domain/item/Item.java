@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public abstract class Item {
 
     @Id @GeneratedValue
-    @Column(name = "order_item_id")
+    @Column(name = "item_id")
     private Long id;
 
     private String name;

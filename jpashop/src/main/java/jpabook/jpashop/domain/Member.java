@@ -27,4 +27,5 @@ public class Member {
 
     @OneToMany(mappedBy = "member") // 연관관계 주인 X
     private List<Order> orders = new ArrayList<>();
+
 }
