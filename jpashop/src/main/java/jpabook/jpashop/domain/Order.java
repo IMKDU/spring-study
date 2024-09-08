@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.annotations.ManyToAny;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,6 +12,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -30,7 +30,7 @@ public class Order {
     @Column(name = "order_id")
     private Long id;
 
-    @ManyToAny
+    @ManyToOne
     @JoinColumn(name = "member_id") // 외래키 정의 & 연관관계 주인
     private Member member;
 

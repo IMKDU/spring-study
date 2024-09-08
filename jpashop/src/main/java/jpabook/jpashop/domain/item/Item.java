@@ -7,8 +7,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
+import jakarta.persistence.ManyToMany;
+import jpabook.jpashop.domain.Category;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
+import java.util.ArrayList;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE) // 상속 관계 매핑설정
@@ -23,5 +28,8 @@ public abstract class Item {
     private String name;
     private int price;
     private int stockQuantity;
+
+    @ManyToMany(mappedBy = "items")
+    private List<Category> categories = new ArrayList<>();
 }
 
