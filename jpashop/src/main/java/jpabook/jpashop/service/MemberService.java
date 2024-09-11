@@ -41,8 +41,6 @@ public class MemberService {
             throw new IllegalStateException("이미 존재하는 회원입니다.");
         }
     }
-    
-
 
     // 2. 회원전체 조회
     public List<Member> findMembers() {
@@ -50,7 +48,6 @@ public class MemberService {
     }
 
     // 3. 회원 1명 조회
-
     public Member findOne(Long memberId) {
         return memberRepository.findOne(memberId);
     }
