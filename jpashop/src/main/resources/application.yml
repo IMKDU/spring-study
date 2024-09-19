@@ -6,7 +6,8 @@ spring:
             settings:
                 web-allow-others: true
     datasource:
-        url: jdbc:h2:~/jpashop;
+        # url: jdbc:h2:~/jpashop; <-- gitpod 환경에서 URL 연동
+        url: jdbc:h2:tcp://localhost/~/jpashop
         username: sa
         password:
         driverClassName: org.h2.Driver
