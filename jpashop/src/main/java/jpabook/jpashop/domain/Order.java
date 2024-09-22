@@ -48,8 +48,8 @@ public class Order {
     private OrderStatus status; // 주문상태 [ORDER, CANCEL]
 
 
-    //==연관관계 "편의" 메소드==//
-    /*
+    //==연관관계 편의 메소드==//
+    /**
      * 의존성 주입 (DI) 을 해당 부분에서 관리한다.
      * 대체로, 관리하는 로직에서 연관관계 메소드를 작성함.
      */
@@ -68,6 +68,55 @@ public class Order {
         delivery.setOrder(this);
     }
 
+    //==생성 메소드==//
+    /**
+        엔티티 클래스에서 주문과 연관된 여러 값들을 비즈니스 로직에 따라서 지정한다. /
+        "set 메소드를 사용하지 않고, 생성메소드로 복잡한 DI 문제 해소" / DI 관련 객체 응집선언
+        <주문,주문상품 엔티티 개발 인프런 강좌>
+     */
+    public static Order createOrder(Member member, Delivery delivery, OrderItem... orderItems) {
+        Order order = new Order();
+        order.setMember(member);
+        order.setDelivery(delivery);
+        for (OrderItem orderItem : orderItems) {
+            order.addOrderItem(orderItem);
+        }
+        // 주문상태 & 주문시간 선언
+        order.setStatus(OrderStatus.ORDER); // 주문상태 ORDER 상태지정
+        order.setOrderDate(LocalDateTime.now()); // 주문시간 현재시간 지정
+        return order;
+    }
+
+    //==비즈니스 로직==//
+    /**
+     *  주문취소
+     */
+    public void cancel(){
+        if (delivery.getStatus() == DeliveryStatus.COMP){
+            throw new IllegalStateException("이미 배송완료된 상품은 취소가 불가능합니다.");
+        }
+        this.setStatus(OrderStatus.CANCEL); // 주문상태 order -> cancel 변경
+        // 주문취소 상품 재고복구
+        for(OrderItem orderItem : orderItems){
+            orderItem.cancel();
+        }
+    }
+
+    //==조회 로직==//
+    /**
+        전체 주문가격 조회
+     */
+    public int getTotalPrice() {
+        int totalPrice = 0;
+        for (OrderItem orderItem : orderItems) {
+            totalPrice += orderItem.getTotalPrice();
+        }
+        return totalPrice;
+// java 8 lamda 식 활용 {논리식 단순화}
+//       return orderItems.stream()
+//               .mapToInt(OrderItem::getTotalPrice)
+//               .sum();
+    }
 
 
 }
