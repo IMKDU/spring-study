@@ -8,11 +8,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jpabook.jpashop.domain.item.Item;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED) // 기본 생성자 생성제한
 public class OrderItem {
 
     @Id @GeneratedValue
@@ -29,6 +32,12 @@ public class OrderItem {
 
     private int orderPrice; //주문 가격
     private int count; //주문 수량
+
+
+    // 기본 생성자 생성제한 -> Lombook으로 간편화
+//    protected OrderItem() {
+//
+//    }
 
     //==생성 메소드==//
     public static OrderItem createOrderItem(Item item, int orderPrice, int count){
