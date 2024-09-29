@@ -78,15 +78,22 @@ public class ItemController {
 
     @PostMapping("/items/{itemId}/edit")
     public String updateItem(@ModelAttribute BookForm form) {
-        Book book = new Book();
-        book.setId(form.getId());
-        book.setName(form.getName());
-        book.setAuthor(form.getAuthor());
-        book.setIsbn(form.getIsbn());
-        book.setPrice(form.getPrice());
-        book.setStockQuantity(form.getStockQuantity());
+        
+        /* 컨트롤러에서 엔티티를 무지성 호출하지 마라
+         * 
+        */
+        // Book book = new Book();
+        // book.setId(form.getId());
+        // book.setName(form.getName());
+        // book.setAuthor(form.getAuthor());
+        // book.setIsbn(form.getIsbn());
+        // book.setPrice(form.getPrice());
+        // book.setStockQuantity(form.getStockQuantity());
 
-        itemService.saveItem(book);
+        // itemService.saveItem(book);
+        // itemService.updateItem(book.getId(), book);
+
+        itemService.updateItem(form.getId() ,form.getName(), form.getPrice(), form.getStockQuantity());
         return "redirect:/items";
     }
 
