@@ -14,7 +14,7 @@ public class ItemRepository {
 
     private final EntityManager em;
     
-    // 신규 상품등록 & 기존상품 수정
+    // 신규 상품등록 & 기존상품 (병합방식)수정
     public void save(Item item) {
         if (item.getId() == null) {
             em.persist(item);

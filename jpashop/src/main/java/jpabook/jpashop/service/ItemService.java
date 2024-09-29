@@ -28,9 +28,10 @@ public class ItemService {
         Item findItem = itemRepository.findOne(itemId);
 
         // 해당 set 메소드도 엔티티에서 추가메소드로 구현 (유지보수 시, 어떤 의미인지 역추적가능)
-        findItem.setName(name);
-        findItem.setPrice(price);
-        findItem.setStockQuantity(stockQuantity); // 트랜잭션 Dirty Checking 시작 후 변경감지 내용 DB 커밋
+        findItem.editItem(name, price, stockQuantity);
+        // findItem.setName(name);
+        // findItem.setPrice(price);
+        // findItem.setStockQuantity(stockQuantity); // 트랜잭션 Dirty Checking 시작 후 변경감지 내용 DB 커밋
     }
 
     public List<Item> findItems() {

@@ -37,12 +37,19 @@ public abstract class Item {
     //==비즈니스 로직==//
     /**
      * 1. stock 재고증가
+     * 2. Item 수정
      */
     public void addStock(int quantity) {
         this.stockQuantity += quantity;
     }
+    public void editItem(String name, int price, int stockQuantity) {
+        this.name = name;
+        this.price = price;
+        this.stockQuantity = stockQuantity;
+    }
+
     /**
-     * 2. stock 재고감소
+     * 3. stock 재고감소
      */
     public void removeStock(int quantity) {
         int restStock = this.stockQuantity - quantity;
