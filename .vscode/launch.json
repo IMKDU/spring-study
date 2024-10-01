@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "JpaBasicApplication",
+            "request": "launch",
+            "mainClass": "com.inflearn.jpa_basic.JpaBasicApplication",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "SpringStudyApplication",
             "request": "launch",
             "mainClass": "com.study.spring_study.SpringStudyApplication",

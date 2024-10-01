@@ -1,0 +1,29 @@
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+  datasource:
+    url: jdbc:h2:~/jpa-basic; # <-- gitpod 환경에서 URL 연동
+    # url: jdbc:h2:tcp://localhost/~/jpashop  # <-- 로컬 환경에서 URL 연동
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  # 아래 jpa부분은 참고입니다. h2와 datasource부분만 적용시켜주시면 됩니다.
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        hibernate:
+          ddl-auto: none
+          dialect: org.hibernate.dialect.H2Dialect
+    database-platform: org.hibernate.dialect.H2Dialect
+
+logging:
+  level:
+    org.hibernate.SQL: debug
