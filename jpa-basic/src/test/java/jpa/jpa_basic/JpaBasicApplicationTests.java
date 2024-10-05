@@ -1,4 +1,4 @@
-package com.inflearn.jpa_basic;
+package jpa.jpa_basic;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

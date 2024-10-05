@@ -8,6 +8,34 @@
             "type": "java",
             "name": "JpaMain",
             "request": "launch",
+            "mainClass": "jpa.jpa_basic.hellojpa.JpaMain",
+            "projectName": "jpa-basic"
+        },
+        {
+            "type": "java",
+            "name": "JpaBasicApplication",
+            "request": "launch",
+            "mainClass": "jpa.jpa_basic.JpaBasicApplication",
+            "projectName": "jpa-basic"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "com.hellojpa.Main",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "JpaMain",
+            "request": "launch",
+            "mainClass": "hellojpa.JpaMain",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "JpaMain",
+            "request": "launch",
             "mainClass": "com.inflearn.jpa_basic.hellojpa.JpaMain",
             "projectName": "jpa-basic"
         },
