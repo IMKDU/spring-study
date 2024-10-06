@@ -20,14 +20,14 @@
             <property name="hibernate.use_sql_comments"  value="true"/>
             <property name="hibernate.hbm2ddl.auto" value="create" />  <!-- DB 테이블 자동생성 -->
 
-            <!-- H2 웹 콘솔 옵션 -->
+            <!-- H2 웹 콘솔 옵션
             <property name="spring.h2.console.enabled" value="true"/>
             <property name="spring.h2.console.path" value="/h2-console"/>
             <property name="spring.datasource.url" value="jdbc:h2:~/jpa-basic"/>
             <property name="spring.datasource.driverClassName" value="org.h2.Driver"/>
             <property name="spring.datasource.username" value="sa"/>
             <property name="spring.datasource.password" value=""/>
-            <property name="spring.datasource.platform" value="h2"/>
+            <property name="spring.datasource.platform" value="h2"/> -->
 
         </properties>
     </persistence-unit>
