@@ -5,7 +5,10 @@
     <persistence-unit name="hello">
 
         <!-- 엔티티 등록 -->
-        <class>jpa.jpa_basic.hellojpa.Member</class>
+        <class>jpa.jpa_basic.jpashop.domain.Member</class>
+        <class>jpa.jpa_basic.jpashop.domain.Order</class>
+        <class>jpa.jpa_basic.jpashop.domain.OrderItem</class>
+        <class>jpa.jpa_basic.jpashop.domain.Item</class>
         <properties>
             <!-- 필수 속성 -->
             <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>

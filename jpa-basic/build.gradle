@@ -36,6 +36,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
 	runtimeOnly 'com.h2database:h2' // H2 DB 드라이버 같은 역할
+	compileOnly 'org.projectlombok:lombok' // lombook API
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'

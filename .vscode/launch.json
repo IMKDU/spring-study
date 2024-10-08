@@ -8,6 +8,13 @@
             "type": "java",
             "name": "JpaMain",
             "request": "launch",
+            "mainClass": "jpa.jpa_basic.jpashop.JpaMain",
+            "projectName": "jpa-basic"
+        },
+        {
+            "type": "java",
+            "name": "JpaMain",
+            "request": "launch",
             "mainClass": "jpa.jpa_basic.hellojpa.JpaMain",
             "projectName": "jpa-basic"
         },
