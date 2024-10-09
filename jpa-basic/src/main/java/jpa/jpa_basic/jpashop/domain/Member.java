@@ -1,9 +1,12 @@
 package jpa.jpa_basic.jpashop.domain;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,8 +21,9 @@ public class Member {
 
     private String name;
 
-    @Column(name = "TEAM_ID")
-    private Long teamId;
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
     
     private String city;
     private String street;

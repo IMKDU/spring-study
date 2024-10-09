@@ -22,8 +22,18 @@ public class JpaMain {
 
             Member member = new Member();
             member.setName("member1");
-            member.setTeamId(team.getId());
+            member.setTeam(team);
             em.persist(member);
+
+
+            // 영속성 컨텍스트 1차 캐시 수동커밋(flush)
+            em.flush();
+            em.clear();
+
+            Member findMember = em.find(Member.class, member.getId());
+
+            Team findTeam = findMember.getTeam();
+            System.out.println("find Team = " + findTeam.getName());
 
             tx.commit();
         } catch (Exception e) {
