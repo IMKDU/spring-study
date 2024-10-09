@@ -4,6 +4,8 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
+import jpa.jpa_basic.jpashop.domain.Member;
+import jpa.jpa_basic.jpashop.domain.Team;
 
 public class JpaMain {
     public static void main(String[] args) {
@@ -11,11 +13,25 @@ public class JpaMain {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
-
         tx.begin();
-        tx.commit();
-        
-        em.close();
+
+        try {
+            Team team = new Team();
+            team.setName("Team A");
+            em.persist(team);
+
+            Member member = new Member();
+            member.setName("member1");
+            member.setTeamId(team.getId());
+            em.persist(member);
+
+            tx.commit();
+        } catch (Exception e) {
+            tx.rollback();
+        } finally {
+            em.close();
+        }
         emf.close();
+
     }
 }

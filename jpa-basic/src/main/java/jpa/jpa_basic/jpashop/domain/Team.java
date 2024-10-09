@@ -9,19 +9,11 @@ import lombok.Setter;
 
 @Entity
 @Getter @Setter
-public class Member {
-    
+public class Team {
+
     @Id
     @GeneratedValue
-    @Column(name = "MEMBER_ID")
-    private Long id;
-
-    private String name;
-
     @Column(name = "TEAM_ID")
-    private Long teamId;
-    
-    private String city;
-    private String street;
-    private String zipcode;
+    private Long id;
+    private String name;
 }
