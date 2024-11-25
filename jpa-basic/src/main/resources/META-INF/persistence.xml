@@ -13,6 +13,9 @@
         <class>jpa.jpa_basic.jpashop.domain.Locker</class>
         <class>jpa.jpa_basic.jpashop.domain.Product</class>
         <class>jpa.jpa_basic.jpashop.domain.MemberProduct</class>
+        <class>jpa.jpa_basic.jpashop.domain.Delivery</class>
+        <class>jpa.jpa_basic.jpashop.domain.Category</class>
+
         <properties>
             <!-- 필수 속성 -->
             <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>

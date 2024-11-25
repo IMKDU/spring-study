@@ -27,6 +27,10 @@ public class Order {
     @OneToMany(mappedBy = "order") // OrderItem 양방향 연관관계 설정 -> 비즈니스 로직에 근거해 설정함
     private List<OrderItem> orderItems = new ArrayList<>();
 
+    @OneToOne
+    @JoinColumn(name = "DELIVERY_ID")
+    private Delivery delivery;
+
     private Date orderDate;
     private OrderStatus status;
 
