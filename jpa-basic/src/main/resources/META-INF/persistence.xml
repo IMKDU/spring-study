@@ -15,6 +15,9 @@
         <class>jpa.jpa_basic.jpashop.domain.MemberProduct</class>
         <class>jpa.jpa_basic.jpashop.domain.Delivery</class>
         <class>jpa.jpa_basic.jpashop.domain.Category</class>
+        <class>jpa.jpa_basic.jpashop.domain.Album</class>
+        <class>jpa.jpa_basic.jpashop.domain.Movie</class>
+        <class>jpa.jpa_basic.jpashop.domain.Book</class>
 
         <properties>
             <!-- 필수 속성 -->

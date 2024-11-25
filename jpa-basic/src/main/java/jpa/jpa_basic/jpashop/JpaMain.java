@@ -18,23 +18,15 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Order order = new Order();
-            OrderItem orderItem = new OrderItem();
-            orderItem.setOrder(order);
+            Movie movie = new Movie();
+            movie.setActor("aaa");
+            movie.setDirector("bbb");
+            movie.setName("바람과함께사라지다");
+            movie.setPrice(10000);
 
-            Item order_item = new Item();
-            order_item.setName("Cake");
-            orderItem.setItem(order_item);
-
-            order.addOrderItems(orderItem);
-            Member order_member = new Member();
-            order_member.setName("홍길동");
-            order.setMember(order_member);
-
-            em.persist(order_member);
-            em.persist(order_item);
-            em.persist(orderItem);
-            em.persist(order);
+            em.persist(movie);
+            em.flush();
+            em.clear();
 
 
             tx.commit();
