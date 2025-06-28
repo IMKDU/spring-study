@@ -1,5 +1,6 @@
 package jpa.jpa_basic.jpashop;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,16 +19,20 @@ public class JpaMain {
         tx.begin();
 
         try {
+
+            Album album = new Album();
+            album.setName("dd");
+
             Movie movie = new Movie();
-            movie.setActor("aaa");
-            movie.setDirector("bbb");
-            movie.setName("바람과함께사라지다");
-            movie.setPrice(10000);
+            movie.setName("mm");
 
+            Book book = new Book();
+            book.setAuthor("kim");
+            book.setName("미움받을 용기");
+
+            em.persist(album);
             em.persist(movie);
-            em.flush();
-            em.clear();
-
+            em.persist(book);
 
             tx.commit();
         } catch (Exception e) {
